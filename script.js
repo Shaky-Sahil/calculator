@@ -28,8 +28,11 @@ function operator(num1,sign,num2){
 }
 
 
-
-operator(5,"+",2);
-operator(5,"-",2);
-operator(5,"*",2);
-operator(5,"/",2);
+function main(){
+    operator(5,"+",2);
+    operator(5,"-",2);
+    operator(5,"*",2);
+    operator(5,"/",2);
+    
+}
+main()
