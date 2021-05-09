@@ -1,0 +1,1 @@
+Calculator project with vanilla js
