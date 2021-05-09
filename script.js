@@ -10,7 +10,26 @@ function multiply (num1,num2){
 function divide (num1,num2){
     console.log(num1/num2);
 }
-add(5,2);
-subtract(5,2);
-multiply(5,2);
-divide(5,2);
+function operator(num1,sign,num2){
+    switch(sign){
+        case "+":
+            add(num1,num2);
+            break;
+        case "-":
+            subtract(num1,num2);
+            break;
+        case "*":
+            multiply(num1,num2);
+            break;
+        case "/":
+            divide(num1,num2);
+            break;
+    }
+}
+
+
+
+operator(5,"+",2);
+operator(5,"-",2);
+operator(5,"*",2);
+operator(5,"/",2);
