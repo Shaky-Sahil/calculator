@@ -1,26 +1,30 @@
-function add(num1,num2,text){
+function add(num1,num2,text){       
     num1=parseInt(num1);
     num2=parseInt(num2);
     ans=num1+num2;
-    text.value=ans
+    text.value=ans;
 
 }
 function subtract (num1,num2,text){
     num1=parseInt(num1);
     num2=parseInt(num2);
-    console.log(num1-num2);
+    ans=num1-num2;
+    text.value=ans
 }
 function multiply (num1,num2,text){
     num1=parseInt(num1);
     num2=parseInt(num2);
-    console.log(num1*num2);
+    ans=num1*num2;
+    text.value=ans
 }
 function divide (num1,num2,text){
     num1=parseInt(num1);
     num2=parseInt(num2);
-    console.log(num1/num2);
+    ans=num1/num2;
+    text.value=ans
 }
 function operator(num1,sign,num2,text){
+    
 
     switch(sign){
         case "+":
@@ -43,36 +47,33 @@ function main(){
     const text=document.querySelector(".screen");
     const clear=document.querySelector("#clear");
     const equals=document.querySelector("#equals");
-    console.log(clear);
+    const sign=document.querySelectorAll(".sign");
+    const numbers=document.querySelectorAll(".number")
 
     clear.addEventListener("click",()=>{
         text.value=""
     })
 
-    const numbers=document.querySelectorAll(".number")
     
     for (let i =0;i<numbers.length;i++){
-        console.log(numbers[i]);
         numbers[i].addEventListener("click",()=>{
             text.value+=numbers[i].innerHTML;
         })
     }
-
-    const plus=document.querySelector(".sign");
-    
-    plus.addEventListener("click",()=>{
-        val=text.value.split(" ");
-        console.log(val);
-        if (val.length==1){
-            console.log(typeof(text.value));
-            num1=text.value;
-            text.value+=" "+plus.innerHTML+" ";
+    for (let i =0;i<sign.length;i++){
+        sign[i].addEventListener("click",()=>{
+            val=text.value.split(" ");
+            if (val.length==1){
+                num1=text.value;
+                text.value+=" "+sign[i].innerHTML+" ";
         }
+        
         else{
             operator(val[0],val[1],val[2],text);
-            text.value+=" "+plus.innerHTML+" ";
+            text.value+=" "+sign[i].innerHTML+" ";
         }
     })
+    }   
 
     equals.addEventListener("click",()=>{
         val=text.value.split(" ");
