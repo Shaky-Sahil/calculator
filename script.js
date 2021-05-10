@@ -42,6 +42,7 @@ function operator(num1,sign,num2,text){
 function main(){
     const text=document.querySelector(".screen");
     const clear=document.querySelector("#clear");
+    const equals=document.querySelector("#equals");
     console.log(clear);
 
     clear.addEventListener("click",()=>{
@@ -60,12 +61,19 @@ function main(){
     const plus=document.querySelector(".sign");
     
     plus.addEventListener("click",()=>{
-        console.log(typeof(text.value));
-        num1=text.value;
-        text.value+=" "+plus.innerHTML+" ";
+        val=text.value.split(" ");
+        console.log(val);
+        if (val.length==1){
+            console.log(typeof(text.value));
+            num1=text.value;
+            text.value+=" "+plus.innerHTML+" ";
+        }
+        else{
+            operator(val[0],val[1],val[2],text);
+            text.value+=" "+plus.innerHTML+" ";
+        }
     })
 
-    const equals=document.querySelector("#equals");
     equals.addEventListener("click",()=>{
         val=text.value.split(" ");
         operator(val[0],val[1],val[2],text);
