@@ -29,10 +29,29 @@ function operator(num1,sign,num2){
 
 
 function main(){
-    operator(5,"+",2);
-    operator(5,"-",2);
-    operator(5,"*",2);
-    operator(5,"/",2);
+    const text=document.querySelector(".screen");
+    const clear=document.querySelector("#clear");
+    console.log(clear);
+
+    clear.addEventListener("click",()=>{
+        text.value=""
+    })
+
+    const numbers=document.querySelectorAll(".number")
     
+    for (let i =0;i<numbers.length;i++){
+        console.log(numbers[i]);
+        numbers[i].addEventListener("click",()=>{
+            text.value+=numbers[i].innerHTML;
+        })
+    }
+
+    const plus=document.querySelector(".sign");
+    
+    plus.addEventListener("click",()=>{
+        num1=text.value;
+        text.value+=plus.innerHTML;
+    })
+
 }
 main()
