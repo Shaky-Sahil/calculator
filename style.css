@@ -4,4 +4,8 @@
     height: 500px;
     text-align: center;
     display: grid;
+    grid-template-columns: repeat(3,3fr);
+}
+.screen{
+    grid-column:1/4;
 }
