@@ -1,11 +1,34 @@
+*{
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+body{
+    background-color: #F5F1E3;
+    display: grid;
+    place-items: center;
+}
 .container{
-    margin:auto;
-    width:500px;
-    height: 500px;
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: #3F3F37;
+    border-style: solid;
+    width:25em;
+    height: 32em;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3,3fr);
+    grid-gap:7px;
+    padding:5px;
+    padding-top: 10px;
 }
 .screen{
     grid-column:1/4;
+    
+}
+button{
+    border-radius: 5px;
+    color: #000;
+    font-size: medium;
+}
+#equals{
+    background-color: #F08700;
 }
